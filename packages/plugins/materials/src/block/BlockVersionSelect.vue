@@ -8,7 +8,7 @@
       <tiny-grid
         ref="versionGrid"
         :data="state.backupList"
-        :radio-config="state"
+        :radio-config="state.parameter"
         :show-header="false"
         class="stripe-tiny-grid"
       >
@@ -59,7 +59,9 @@ export default {
     const state = reactive({
       backupList: [],
       title: '',
-      checkRowKey: ''
+      parameter: {
+        checkRowKey: ''
+      }
     })
     const versionGrid = ref(null)
 
@@ -70,7 +72,7 @@ export default {
           nextTick(() => {
             versionGrid.value.getData().forEach((item) => {
               if (item.version === selectedBlock.value.current_version) {
-                state.checkRowKey = item._RID
+                state.parameter.checkRowKey = item._RID
               }
             })
           })
