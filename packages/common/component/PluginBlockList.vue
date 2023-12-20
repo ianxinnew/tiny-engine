@@ -1,5 +1,6 @@
 <template>
   <ul
+    v-if="state.data.length"
     :class="['block-list', 'lowcode-scrollbar', { 'is-small-list': blockStyle === 'mini' }, { isShortcutPanel }]"
     @mouseleave="state.hover = false"
   >
@@ -122,6 +123,10 @@
       </div>
     </div>
   </ul>
+  <div v-else class="empty-wrap">
+    <svg-icon class="empty-icon" name="empty"></svg-icon>
+    <p class="empty-text">暂无数据</p>
+  </div>
 </template>
 
 <script>
