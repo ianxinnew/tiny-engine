@@ -381,6 +381,9 @@ export default {
     margin-right: 10px;
     margin-left: 20px;
   }
+  :deep(.tiny-tree > span) {
+    display: none;
+  }
   :deep(.tiny-tree) {
     background: var(--ti-lowcode-page-manage-tree-node-background-color);
     color: var(--ti-lowcode-page-manage-tree-color);
