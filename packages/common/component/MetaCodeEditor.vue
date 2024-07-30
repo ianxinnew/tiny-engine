@@ -21,7 +21,7 @@
         <div v-if="editorTipsTitle" class="header-tips-container">
           <span class="header-tips-title" :title="editorTipsTitle">{{ editorTipsTitle }}</span>
         </div>
-        <div class="demo-split-pane">
+        <div class="source-code-split-panel-wrapper">
           <tiny-split v-model="splitWidth">
             <template #left>
               <monaco-editor
@@ -33,7 +33,7 @@
               ></monaco-editor>
             </template>
             <template #right>
-              <div class="demo-split-pane-right">
+              <div class="source-code-split-panel-wrapper-right">
                 <div class="header-tips-demo-content lowcode-scrollbar-thin">
                   <span>{{ $t('common.exampleCode') }}</span>
                   <pre><code>{{ editorTipsDemo }}</code></pre>
@@ -340,7 +340,7 @@ export default {
     flex: 1;
   }
 
-  .demo-split-pane {
+  .source-code-split-panel-wrapper {
     height: 100%;
 
     :deep(.tiny-split-trigger) {
