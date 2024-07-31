@@ -9415,7 +9415,28 @@
                     "widget": {
                       "component": "CodeConfigurator",
                       "props": {
-                        "language": "json"
+                        "language": "json",
+                        "tips":{
+                          "title":"设置表格的数据",
+                          "demo":[
+                            {
+                              "id": "1",
+                              "name": "GFD科技有限公司",
+                              "city": "福州",
+                              "employees": 800,
+                              "created_date": "2014-04-30 00:56:00",
+                              "boole": false
+                            },
+                            {
+                              "id": "2",
+                              "name": "WWW科技有限公司",
+                              "city": "深圳",
+                              "employees": 300,
+                              "created_date": "2016-07-08 12:36:22",
+                              "boole": true
+                            }
+                          ]
+                        }
                       }
                     },
                     "onChange": "this.delProp('fetchData')",
