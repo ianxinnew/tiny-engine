@@ -248,7 +248,6 @@ watch(
     if (!classNameList) {
       return
     }
-
     const matchStyles = Object.values(state.styleObject).filter(
       (value) => value.pureSelector === classNameList && value.mouseState === mouseState
     )
