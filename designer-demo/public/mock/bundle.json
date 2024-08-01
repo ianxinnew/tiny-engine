@@ -2933,17 +2933,19 @@
                         "zh_CN": "是否自动切换"
                       }
                     },
+                    "className": "item-reverse",
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
                       "zh_CN": ""
-                    }
+                    },
+                    "labelPosition": "left"
                   },
                   {
                     "property": "tabs",
@@ -3065,17 +3067,19 @@
                         "zh_CN": "是否循环显示"
                       }
                     },
+                    "className": "item-reverse",
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
                       "zh_CN": ""
-                    }
+                    },
+                    "labelPosition": "left"
                   },
                   {
                     "property": "show-title",
@@ -3084,17 +3088,19 @@
                         "zh_CN": "是否显示标题"
                       }
                     },
+                    "className": "item-reverse",
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
                       "zh_CN": ""
-                    }
+                    },
+                    "labelPosition": "left"
                   },
                   {
                     "property": "trigger",
@@ -4696,17 +4702,19 @@
                         "zh_CN": "是否是朴素按钮"
                       }
                     },
+                    "className": "item-reverse",
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
                       "zh_CN": ""
-                    }
+                    },
+                    "labelPosition": "left"
                   },
                   {
                     "property": "disabled",
@@ -4715,17 +4723,19 @@
                         "zh_CN": "禁用"
                       }
                     },
+                    "className": "item-reverse",
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
                       "zh_CN": ""
-                    }
+                    },
+                    "labelPosition": "left"
                   }
                 ]
               }
@@ -4851,14 +4861,16 @@
                         "zh_CN": "flex"
                       }
                     },
+                    "className": "item-reverse",
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
-                    }
+                    },
+                    "labelPosition": "left"
                   },
                   {
                     "property": "gutter",
@@ -4951,17 +4963,19 @@
                         "zh_CN": "是否禁用"
                       }
                     },
+                    "className": "item-reverse",
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
                       "zh_CN": ""
-                    }
+                    },
+                    "labelPosition": "left"
                   },
                   {
                     "property": "label-width",
@@ -4990,17 +5004,19 @@
                         "zh_CN": "行内布局"
                       }
                     },
+                    "className": "item-reverse",
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
                       "zh_CN": "行内布局模式，默认为 false"
-                    }
+                    },
+                    "labelPosition": "left"
                   },
                   {
                     "property": "label-align",
@@ -5009,12 +5025,13 @@
                         "zh_CN": "必填标识是否占位"
                       }
                     },
+                    "className": "item-reverse",
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
@@ -5791,6 +5808,7 @@
                   },
                   {
                     "property": "disabled",
+                    "className": "item-reverse",
                     "label": {
                       "text": {
                         "zh_CN": "禁用"
@@ -5801,7 +5819,7 @@
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
@@ -5865,24 +5883,39 @@
                 },
                 "content": [
                   {
-                    "property": "round",
-                    "label": {
-                      "text": {
-                        "zh_CN": "圆角"
-                      }
-                    },
+                    "property": "style",
+                    "cols": 12,
+                    "rules": [],
+                    "hidden": false,
+                    "defaultValue":"default",
+                    "bindState": false,
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
-                    "cols": 12,
+                    "multiProperty": true,
                     "widget": {
-                      "component": "SwitchConfigurator",
-                      "props": {}
+                      "component": "MultPropertyConfigurator",
+                      "props": {
+                        "options": [
+                          {
+                            "label": "默认",
+                            "value": "default"
+                          },
+                          {
+                            "label": "圆形",
+                            "value": "circle"
+                          },
+                          {
+                            "label": "圆角",
+                            "value": "round"
+                          }
+                        ]
+                      }
                     },
                     "description": {
-                      "zh_CN": "是否圆角按钮"
+                      "zh_CN": ""
                     },
-                    "labelPosition": "left"
+                    "labelPosition":"left"
                   },
                   {
                     "property": "plain",
@@ -5891,12 +5924,13 @@
                         "zh_CN": "朴素按钮"
                       }
                     },
+                    "className": "item-reverse",
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
@@ -5925,38 +5959,19 @@
                     "labelPosition":"left"
                   },
                   {
-                    "property": "circle",
-                    "label": {
-                      "text": {
-                        "zh_CN": "圆角"
-                      }
-                    },
-                    "required": true,
-                    "readOnly": false,
-                    "disabled": false,
-                    "cols": 12,
-                    "widget": {
-                      "component": "SwitchConfigurator",
-                      "props": {}
-                    },
-                    "description": {
-                      "zh_CN": "是否圆形按钮"
-                    },
-                    "labelPosition": "left"
-                  },
-                  {
                     "property": "autofocus",
                     "label": {
                       "text": {
                         "zh_CN": "聚焦"
                       }
                     },
+                    "className": "item-reverse",
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
@@ -5971,12 +5986,13 @@
                         "zh_CN": "加载中"
                       }
                     },
+                    "className": "item-reverse",
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
@@ -6160,12 +6176,13 @@
                         "zh_CN": "清除按钮"
                       }
                     },
+                    "className": "item-reverse",
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
@@ -6180,12 +6197,13 @@
                         "zh_CN": "是否禁用"
                       }
                     },
+                    "className": "item-reverse",
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
@@ -6262,12 +6280,13 @@
                         "zh_CN": "聚焦"
                       }
                     },
+                    "className": "item-reverse",
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
@@ -6551,17 +6570,19 @@
                         "zh_CN": "禁用"
                       }
                     },
+                    "className": "item-reverse",
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
                       "zh_CN": ""
-                    }
+                    },
+                    "labelPosition": "left"
                   }
                 ]
               },
@@ -6580,17 +6601,19 @@
                         "zh_CN": "显示边框"
                       }
                     },
+                    "className": "item-reverse",
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
                       "zh_CN": ""
-                    }
+                    },
+                    "labelPosition": "left"
                   },
                   {
                     "property": "size",
@@ -6776,12 +6799,13 @@
                         "zh_CN": "清除按钮"
                       }
                     },
+                    "className": "item-reverse",
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
@@ -6796,12 +6820,13 @@
                         "zh_CN": "下拉面板可搜索"
                       }
                     },
+                    "className": "item-reverse",
                     "required": false,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
@@ -6816,17 +6841,19 @@
                         "zh_CN": "是否禁用"
                       }
                     },
+                    "className": "item-reverse",
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
                       "zh_CN": ""
-                    }
+                    },
+                    "labelPosition": "left"
                   },
                   {
                     "property": "options",
@@ -6857,12 +6884,13 @@
                         "zh_CN": "多选"
                       }
                     },
+                    "className": "item-reverse",
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
@@ -6925,12 +6953,13 @@
                         "zh_CN": "多选展示"
                       }
                     },
+                    "className": "item-reverse",
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
@@ -7144,12 +7173,13 @@
                         "zh_CN": "禁用"
                       }
                     },
+                    "className": "item-reverse",
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
@@ -7224,12 +7254,13 @@
                         "zh_CN": "迷你尺寸"
                       }
                     },
+                    "className": "item-reverse",
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
@@ -7367,12 +7398,13 @@
                         "zh_CN": "禁用"
                       }
                     },
+                    "className": "item-reverse",
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
@@ -7407,12 +7439,13 @@
                         "zh_CN": "清空按钮"
                       }
                     },
+                    "className": "item-reverse",
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
@@ -7427,12 +7460,13 @@
                         "zh_CN": "是否Enter键触发search事件"
                       }
                     },
+                    "className": "item-reverse",
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
@@ -7455,12 +7489,13 @@
                         "zh_CN": "迷你尺寸"
                       }
                     },
+                    "className": "item-reverse",
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
@@ -7475,12 +7510,13 @@
                         "zh_CN": "透明模式"
                       }
                     },
+                    "className": "item-reverse",
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
@@ -7646,17 +7682,19 @@
                         "zh_CN": "是否禁用"
                       }
                     },
+                    "className": "item-reverse",
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
                       "zh_CN": ""
-                    }
+                    },
+                    "labelPosition": "left"
                   },
                   {
                     "property": "checked",
@@ -7665,12 +7703,13 @@
                         "zh_CN": "勾选"
                       }
                     },
+                    "className": "item-reverse",
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
@@ -7713,17 +7752,19 @@
                         "zh_CN": "边框"
                       }
                     },
+                    "className": "item-reverse",
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
                       "zh_CN": "是否显示边框"
-                    }
+                    },
+                    "labelPosition": "left"
                   },
                   {
                     "property": "false-label",
@@ -8100,17 +8141,19 @@
                         "zh_CN": "是否禁用"
                       }
                     },
+                    "className": "item-reverse",
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
                       "zh_CN": ""
-                    }
+                    },
+                    "labelPosition": "left"
                   },
                   {
                     "property": "options",
@@ -8151,7 +8194,7 @@
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SelectConfigurator",
+                      "component": "ButtonGroupConfigurator",
                       "props": {
                         "options": [
                           {
@@ -8309,12 +8352,13 @@
                         "zh_CN": "显示与隐藏"
                       }
                     },
+                    "className": "item-reverse",
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
@@ -8349,17 +8393,19 @@
                         "zh_CN": "可拖拽"
                       }
                     },
+                    "className": "item-reverse",
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
                       "zh_CN": "是否开启弹窗的拖拽功能，默认值为 false 。"
-                    }
+                    },
+                    "labelPosition": "left"
                   },
                   {
                     "property": "center",
@@ -8368,12 +8414,13 @@
                         "zh_CN": "居中"
                       }
                     },
+                    "className": "item-reverse",
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
@@ -8408,12 +8455,13 @@
                         "zh_CN": "插入到 Body "
                       }
                     },
+                    "className": "item-reverse",
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
@@ -8428,17 +8476,19 @@
                         "zh_CN": "关闭按钮"
                       }
                     },
+                    "className": "item-reverse",
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
                       "zh_CN": "是否显示关闭按钮，默认值为 true 。"
-                    }
+                    },
+                    "labelPosition": "left"
                   }
                 ]
               }
@@ -8569,12 +8619,13 @@
                         "zh_CN": "显示编辑ICON "
                       }
                     },
+                    "className": "item-reverse",
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
@@ -8631,12 +8682,13 @@
                         "zh_CN": "可新增"
                       }
                     },
+                    "className": "item-reverse",
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
@@ -8651,12 +8703,13 @@
                         "zh_CN": "可关闭"
                       }
                     },
+                    "className": "item-reverse",
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
@@ -9531,6 +9584,7 @@
                           },
                           {
                             "property": "sortable",
+                            "className": "item-reverse",
                             "type": "boolean",
                             "defaultValue": true,
                             "label": {
@@ -9843,12 +9897,13 @@
                         "zh_CN": "调整列宽"
                       }
                     },
+                    "className": "item-reverse",
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
@@ -9963,12 +10018,13 @@
                         "zh_CN": "可排序"
                       }
                     },
+                    "className": "item-reverse",
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
@@ -9999,12 +10055,13 @@
                         "zh_CN": "可排序"
                       }
                     },
+                    "className": "item-reverse",
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
@@ -10019,12 +10076,13 @@
                         "zh_CN": "边框"
                       }
                     },
+                    "className": "item-reverse",
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
@@ -10039,12 +10097,13 @@
                         "zh_CN": "行号连续"
                       }
                     },
+                    "className": "item-reverse",
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
@@ -10059,12 +10118,13 @@
                         "zh_CN": "高亮当前行"
                       }
                     },
+                    "className": "item-reverse",
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
@@ -10079,12 +10139,13 @@
                         "zh_CN": "hover 时候高亮"
                       }
                     },
+                    "className": "item-reverse",
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
@@ -10668,12 +10729,13 @@
                         "zh_CN": "清除按钮"
                       }
                     },
+                    "className": "item-reverse",
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
@@ -10688,17 +10750,19 @@
                         "zh_CN": "是否禁用"
                       }
                     },
+                    "className": "item-reverse",
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
                       "zh_CN": ""
-                    }
+                    },
+                    "labelPosition": "left"
                   }
                 ]
               },
@@ -10795,12 +10859,13 @@
                         "zh_CN": "多选"
                       }
                     },
+                    "className": "item-reverse",
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
@@ -10815,17 +10880,19 @@
                         "zh_CN": "启用分页"
                       }
                     },
+                    "className": "item-reverse",
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
                       "zh_CN": "当 popseletor 为 grid 时才能生效，配置为 true 后还需配置 pagerOp 属性"
-                    }
+                    },
+                    "labelPosition": "left"
                   }
                 ],
                 "description": {
@@ -10994,12 +11061,13 @@
                         "zh_CN": "多选"
                       }
                     },
+                    "className": "item-reverse",
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
@@ -11086,12 +11154,13 @@
                         "zh_CN": "触发NodeClick 事件"
                       }
                     },
+                    "className": "item-reverse",
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
@@ -11154,12 +11223,13 @@
                         "zh_CN": "点击节点选中"
                       }
                     },
+                    "className": "item-reverse",
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
@@ -11327,60 +11397,35 @@
                 },
                 "content": [
                   {
-                    "property": "horizontal",
-                    "type": "Boolean",
-                    "defaultValue": {
-                      "type": "i18n",
-                      "zh_CN": "布局",
-                      "en_US": "layout",
-                      "key": ""
-                    },
-                    "label": {
-                      "text": {
-                        "zh_CN": "水平布局"
-                      }
-                    },
+                    "property": "layout",
                     "cols": 12,
                     "rules": [],
                     "hidden": false,
+                    "defaultValue":"horizontal",
+                    "bindState": false,
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
+                    "multiProperty": true,
                     "widget": {
-                      "component": "SwitchConfigurator",
-                      "props": {}
-                    },
-                    "description": {
-                      "zh_CN": "节点和文字横向布局"
-                    }
-                  },
-                  {
-                    "property": "vertical",
-                    "type": "Boolean",
-                    "defaultValue": {
-                      "type": "i18n",
-                      "zh_CN": "垂直布局",
-                      "en_US": "layout",
-                      "key": ""
-                    },
-                    "label": {
-                      "text": {
-                        "zh_CN": "垂直布局"
+                      "component": "MultPropertyConfigurator",
+                      "props": {
+                        "options": [
+                          {
+                            "label": "横向",
+                            "value": "horizontal"
+                          },
+                          {
+                            "label": "竖直",
+                            "value": "vertical"
+                          }
+                        ]
                       }
                     },
-                    "cols": 12,
-                    "rules": [],
-                    "hidden": false,
-                    "required": true,
-                    "readOnly": false,
-                    "disabled": false,
-                    "widget": {
-                      "component": "SwitchConfigurator",
-                      "props": {}
-                    },
                     "description": {
-                      "zh_CN": "节点和文字垂直布局"
-                    }
+                      "zh_CN": ""
+                    },
+                    "labelPosition":"left"
                   },
                   {
                     "property": "active",
@@ -11656,15 +11701,17 @@
                         "zh_CN": "是否可见"
                       }
                     },
+                    "className": "item-reverse",
                     "defaultValue": true,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
                       "zh_CN": "状态是否可见"
-                    }
+                    },
+                    "labelPosition": "left"
                   },
                   {
                     "property": "manual",
@@ -11673,14 +11720,16 @@
                         "zh_CN": "手动控制"
                       }
                     },
+                    "className": "item-reverse",
                     "defaultValue": true,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
                       "zh_CN": "手动控制模式，设置为 true 后，mouseenter 和 mouseleave 事件将不会生效"
-                    }
+                    },
+                    "labelPosition": "left"
                   }
                 ]
               }
@@ -11765,12 +11814,13 @@
                         "zh_CN": "绑定值"
                       }
                     },
+                    "className": "item-reverse",
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
@@ -11915,17 +11965,19 @@
                         "zh_CN": "显示箭头"
                       }
                     },
+                    "className": "item-reverse",
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
                       "zh_CN": "是否显示 Tooltip 箭头"
-                    }
+                    },
+                    "labelPosition": "left"
                   },
                   {
                     "property": "append-to-body",
@@ -11934,17 +11986,19 @@
                         "zh_CN": "添加到body上"
                       }
                     },
+                    "className": "item-reverse",
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
                       "zh_CN": "Popover弹窗是否添加到body上"
-                    }
+                    },
+                    "labelPosition": "left"
                   },
                   {
                     "property": "arrow-offset",
@@ -12013,17 +12067,19 @@
                         "zh_CN": "禁用"
                       }
                     },
+                    "className": "item-reverse",
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
                       "zh_CN": "Popover 是否可用"
-                    }
+                    },
+                    "labelPosition": "left"
                   },
                   {
                     "property": "offset",
@@ -12112,17 +12168,19 @@
                         "zh_CN": "旋转中心点"
                       }
                     },
+                    "className": "item-reverse",
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
                       "zh_CN": "组件的旋转中心点,组件的旋转中心点"
-                    }
+                    },
+                    "labelPosition": "left"
                   },
                   {
                     "property": "transition",
@@ -12340,12 +12398,13 @@
                         "zh_CN": "清除按钮"
                       }
                     },
+                    "className": "item-reverse",
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
@@ -12360,17 +12419,19 @@
                         "zh_CN": "禁用"
                       }
                     },
+                    "className": "item-reverse",
                     "required": false,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
                       "zh_CN": "禁用"
-                    }
+                    },
+                    "labelPosition": "left"
                   },
                   {
                     "property": "readonly",
@@ -12379,17 +12440,19 @@
                         "zh_CN": "是否只读"
                       }
                     },
+                    "className": "item-reverse",
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
                       "zh_CN": ""
-                    }
+                    },
+                    "labelPosition": "left"
                   },
                   {
                     "property": "size",
@@ -12461,12 +12524,13 @@
                         "zh_CN": "聚焦"
                       }
                     },
+                    "className": "item-reverse",
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
@@ -12718,12 +12782,13 @@
                         "zh_CN": "内容可清空"
                       }
                     },
+                    "className": "item-reverse",
                     "required": true,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
@@ -12738,17 +12803,19 @@
                         "zh_CN": "禁用"
                       }
                     },
+                    "className": "item-reverse",
                     "required": false,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
                       "zh_CN": "禁用"
-                    }
+                    },
+                    "labelPosition": "left"
                   },
                   {
                     "property": "size",
@@ -12792,17 +12859,19 @@
                         "zh_CN": "是否使用加减按钮"
                       }
                     },
+                    "className": "item-reverse",
                     "required": false,
                     "readOnly": false,
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SwitchConfigurator",
+                      "component": "CheckBoxConfigurator",
                       "props": {}
                     },
                     "description": {
                       "zh_CN": ""
-                    }
+                    },
+                    "labelPosition": "left"
                   },
                   {
                     "property": "controls-position",
@@ -12816,7 +12885,7 @@
                     "disabled": false,
                     "cols": 12,
                     "widget": {
-                      "component": "SelectConfigurator",
+                      "component": "ButtonGroupConfigurator",
                       "props": {
                         "options": [
                           {

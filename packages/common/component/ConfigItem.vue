@@ -92,16 +92,18 @@
               </tiny-tooltip>
             </template>
           </component>
-          <component
-            :is="VariableConfigurator"
-            ref="variable"
-            v-if="isTopLayer && !onlyEdit && property.bindState !== false && !isRelatedComponents(widget.component)"
-            :model-value="widget.props.modelValue"
-            :name="widget.props.name"
-            @update:modelValue="onModelUpdate"
-          ></component>
         </div>
       </div>
+    </div>
+    <div :class="['variable-bind', labelPosition === 'left' ? 'bind-left' : '']">
+      <component
+        :is="VariableConfigurator"
+        ref="variable"
+        v-if="isTopLayer && !onlyEdit && property.bindState !== false && !isRelatedComponents(widget.component)"
+        :model-value="widget.props.modelValue"
+        :name="widget.props.name"
+        @update:modelValue="onModelUpdate"
+      ></component>
     </div>
   </div>
   <modal-mask v-if="verification.showModal">
@@ -311,8 +313,13 @@ export default {
             }
           }
         }
-
         if (props.isTopLayer) {
+          if (props.property.multiProperty) {
+            value.forEach((item) => {
+              setProp(item.value, item.isChange, type)
+            })
+            return
+          }
           setProp(property, value, type)
         }
       }
@@ -419,14 +426,27 @@ export default {
     }
 
     const onModelUpdate = (data, shouldUpdate = true) => {
-      const preValue = bindValue.value
-      widget.value.props.modelValue = data
-      emit('update:modelValue', data)
-      if (!shouldUpdate) {
-        return
+      if (props.property.multiProperty) {
+        const array = JSON.parse(JSON.stringify(data))
+        array.forEach((item) => {
+          if (item.isChange) {
+            widget.value.props.modelValue = item.value
+          }
+        })
+        const newData = array.filter((item) => {
+          return item.value !== 'default'
+        })
+        updateValue(newData)
+      } else {
+        const preValue = bindValue.value
+        widget.value.props.modelValue = data
+        emit('update:modelValue', data)
+        if (!shouldUpdate) {
+          return
+        }
+        updateValue(data)
+        executeRelationAction(data, preValue)
       }
-      updateValue(data)
-      executeRelationAction(data, preValue)
     }
 
     const parentPath = inject('path', '')
@@ -694,6 +714,13 @@ export default {
       }
     }
   }
+  .item-reverse {
+    flex-direction: row-reverse;
+    .item-label {
+      margin-top: 2px;
+      width: 86%;
+    }
+  }
   .error-tips {
     margin: 0;
     display: flex;
@@ -708,6 +735,17 @@ export default {
     .error-desc {
       margin-left: 4px;
     }
+  }
+  .variable-bind {
+    height: 100%;
+    width: 32px;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 10px;
+  }
+  .bind-left {
+    align-items: center;
+    padding: 0;
   }
 }
 

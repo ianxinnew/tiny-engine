@@ -356,8 +356,9 @@ export default {
     :deep(.tiny-split-trigger) {
       width: 2px;
 
-      .tiny-split-trigger-bar-con {
-        display: none;
+      .tiny-split-trigger-bar {
+        width: 2px;
+        height: 2px;
       }
     }
 
