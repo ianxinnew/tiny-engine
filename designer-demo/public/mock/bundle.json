@@ -9593,7 +9593,7 @@
                               }
                             },
                             "widget": {
-                              "component": "SwitchConfigurator",
+                              "component": "CheckBoxConfigurator",
                               "props": {}
                             },
                             "labelPosition": "left"
