@@ -95,7 +95,7 @@
         </div>
       </div>
     </div>
-    <div :class="['variable-bind', labelPosition === 'left' ? 'bind-left' : '']">
+    <div :class="['variable-bind', { 'bind-left': labelPosition === 'left' }]">
       <component
         :is="VariableConfigurator"
         ref="variable"
