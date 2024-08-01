@@ -23,7 +23,7 @@
 import { reactive, computed } from 'vue'
 import { Breadcrumb, BreadcrumbItem, Button } from '@opentiny/vue'
 import { useBreadcrumb, useLayout } from '@opentiny/tiny-engine-meta-register'
-import lock from '@opentiny/tiny-engine-toolbar-checkinout'
+import lock from '../../lock'
 import { BlockDeployDialog } from '@opentiny/tiny-engine-common'
 export default {
   components: {
