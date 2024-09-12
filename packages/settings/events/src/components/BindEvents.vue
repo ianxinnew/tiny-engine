@@ -28,7 +28,7 @@
         </template>
         <ul class="bind-event-list">
           <li
-            v-for="(event, name) in state.componentEvents"
+            v-for="(event, name) in state.componentEvents[state.componentName] || commonEvents"
             :key="name"
             :class="['bind-event-list-item', { 'bind-event-list-item-notallow': state.bindActions[name] }]"
             @click="openActionDialog({ eventName: name }, true)"
@@ -43,7 +43,8 @@
         <div class="action-item bind-action-item">
           <div class="binding-name" @click="openActionDialog(action)">
             <div>
-              {{ action.eventName }}<span>{{ state.componentEvents[action.eventName].label.zh_CN }}</span>
+              {{ action.eventName
+              }}<span>{{ state.componentEvents[state.componentName][action.eventName].label.zh_CN }}</span>
             </div>
             <div :class="{ linked: action.linked }">{{ action.linkedEventName }}</div>
             <span class="event-bind">{{ action.ref }}</span>
@@ -119,25 +120,30 @@ export default {
       eventName: '', // 事件名称
       eventBinding: null, // 事件绑定的处理方法对象
       componentEvent: {},
-      componentEvents: commonEvents,
+      componentEvents: {},
       bindActions: {},
-      showBindEventDialog: false
+      showBindEventDialog: false,
+      componentName: ''
     })
 
     const isBlock = computed(() => Boolean(pageState.isBlock))
     const isEmpty = computed(() => Object.keys(state.bindActions).length === 0)
 
     watchEffect(() => {
-      const componentName = pageState?.currentSchema?.componentName
-      const componentSchema = getMaterial(componentName)
+      state.componentName = pageState?.currentSchema?.componentName
+      const componentSchema = getMaterial(state.componentName)
       state.componentEvent = componentSchema?.content?.schema?.events || componentSchema?.schema?.events || {}
-      Object.assign(state.componentEvents, state.componentEvent)
+      if (!state.componentEvents[state.componentName]) {
+        state.componentEvents[state.componentName] = JSON.parse(JSON.stringify(commonEvents))
+        Object.assign(state.componentEvents[state.componentName], state.componentEvent)
+      }
+
       const props = pageState?.currentSchema?.props || {}
       const keys = Object.keys(props)
       state.bindActions = {}
 
       // 遍历组件事件元数据
-      Object.entries(state.componentEvents).forEach(([eventName, componentEvent]) => {
+      Object.entries(state.componentEvents[state.componentName]).forEach(([eventName, componentEvent]) => {
         // 查找组件已添加的事件
         if (keys.indexOf(eventName) > -1) {
           const event = props[eventName]
@@ -225,7 +231,7 @@ export default {
     const handleAddEvent = (params) => {
       const { eventName, eventDescription } = params
 
-      Object.assign(state.componentEvents, {
+      Object.assign(state.componentEvents[state.componentName], {
         [eventName]: {
           label: {
             zh_CN: eventDescription
